@@ -34,30 +34,24 @@ function getHumanChoice() {
 //Logic to play a game of 5 rounds and declare a winner.
 function playGame() {
   console.log("New Game!");
-  computerScore = 0;
-  humanScore = 0;
-  var numRounds = 1;
+  let computerScore = 0;
+  let humanScore = 0;
+  let numRounds = 1;
 
   //Logic to play single round
   function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
       console.log("Draw!");
-    } else if (humanChoice === "rock" && computerChoice === "scissors") {
+    } else if (
+      (humanChoice === "rock" && computerChoice === "scissors") ||
+      (humanChoice === "paper" && computerChoice === "rock") ||
+      (humanChoice === "scissors" && computerChoice === "paper")) {
       console.log("Win!");
       humanScore++;
-    } else if (humanChoice === "paper" && computerChoice === "rock") {
-      console.log("Win!");
-      humanScore++;
-    } else if (humanChoice === "scissors" && computerChoice === "paper") {
-      console.log("Win!");
-      humanScore++;
-    } else if (humanChoice === "rock" && computerChoice === "paper") {
-      console.log("Lose!");
-      computerScore++;
-    } else if (humanChoice === "paper" && computerChoice === "scissors") {
-      console.log("Lose!");
-      computerScore++;
-    } else if (humanChoice === "scissors" && computerChoice === "rock") {
+    } else if (
+      (humanChoice === "rock" && computerChoice === "paper") ||
+      (humanChoice === "paper" && computerChoice === "scissors") ||
+      (humanChoice === "scissors" && computerChoice === "rock")) {
       console.log("Lose!");
       computerScore++;
     }

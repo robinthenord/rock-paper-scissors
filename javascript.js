@@ -39,27 +39,47 @@ function playRound(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
     console.log("It's a draw!");
   } else if (humanChoice === "rock" && computerChoice === "scissors") {
-    console.log("You win!");
+    console.log("Winner! Rock beats Scissors");
     humanScore++;
   } else if (humanChoice === "paper" && computerChoice === "rock") {
-    console.log("You win!");
+    console.log("Winner! Paper beats Rock");
     humanScore++;
-  } else if (humanChoice === "scissors" && computerChoice === "rock") {
-    console.log("You win!");
+  } else if (humanChoice === "scissors" && computerChoice === "paper") {
+    console.log("Winner! Scissors beats Paper");
     humanScore++;
   } else if (humanChoice === "rock" && computerChoice === "paper") {
-    console.log("You lose!");
+    console.log("Loser! Paper beats Rock");
     computerScore++;
   } else if (humanChoice === "paper" && computerChoice === "scissors") {
-    console.log("You lose!");
+    console.log("Loser! Scissors beats Paper");
     computerScore++;
   } else if (humanChoice === "scissors" && computerChoice === "rock") {
-    console.log("You lose!");
+    console.log("Loser! Rock beats Scissors");
     computerScore++;
   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+/*Logic to play a game of 5 rounds and declare a winner. 
+Call playgame(); in console to play!*/
+function playGame() {
+  console.log("New Game!");
+  computerScore = 0;
+  humanScore = 0;
+  var numRounds = 1;
+  do {
+    console.log(`--Round ${numRounds}!--`);
+    playRound(getHumanChoice(), getComputerChoice());
+    numRounds++;
 
-playRound(humanSelection, computerSelection);
+    if (numRounds === 6 && computerScore < humanScore) {
+      console.log(`Final result: ${humanScore} vs ${computerScore}. Winner!`);
+    } else if (numRounds === 6 && computerScore > humanScore) {
+      console.log(`Final result: ${humanScore} vs ${computerScore}. Loser!`);
+    } else if (numRounds === 6 && computerScore === humanScore) {
+      console.log(`Final result: ${humanScore} vs ${computerScore}. Draw!`);
+    }
+  } while (numRounds < 6);
+}
+
+//Starts game
+playGame();

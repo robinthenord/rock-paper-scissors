@@ -73,6 +73,3 @@ function playGame() {
     }
   } while (numRounds < 6);
 }
-
-//Starts game
-playGame();

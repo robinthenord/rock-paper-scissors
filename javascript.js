@@ -31,45 +31,21 @@ function getHumanChoice() {
   }
 }
 
-//Logic to play a game of 5 rounds and declare a winner.
-function playGame() {
-  console.log("New Game!");
-  let computerScore = 0;
-  let humanScore = 0;
-  let numRounds = 1;
-
-  //Logic to play single round
-  function playRound(humanChoice, computerChoice) {
-    if (humanChoice === computerChoice) {
-      console.log("Draw!");
-    } else if (
-      (humanChoice === "rock" && computerChoice === "scissors") ||
-      (humanChoice === "paper" && computerChoice === "rock") ||
-      (humanChoice === "scissors" && computerChoice === "paper")) {
-      console.log("Win!");
-      humanScore++;
-    } else if (
-      (humanChoice === "rock" && computerChoice === "paper") ||
-      (humanChoice === "paper" && computerChoice === "scissors") ||
-      (humanChoice === "scissors" && computerChoice === "rock")) {
-      console.log("Lose!");
-      computerScore++;
-    }
+//Logic to play single round
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === computerChoice) {
+    console.log("Draw!");
+  } else if (
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "scissors" && computerChoice === "paper")) {
+    console.log("Win!");
+    humanScore++;
+  } else if (
+    (humanChoice === "rock" && computerChoice === "paper") ||
+    (humanChoice === "paper" && computerChoice === "scissors") ||
+    (humanChoice === "scissors" && computerChoice === "rock")) {
+    console.log("Lose!");
+    computerScore++;
   }
-  do {
-    console.log(`---Round ${numRounds} of 5---`);
-    playRound(getHumanChoice(), getComputerChoice());
-    numRounds++;
-
-    if (numRounds === 6 && computerScore < humanScore) {
-      console.log(`You ${humanScore} - ${computerScore} Computer`);
-      console.log('You win!');
-    } else if (numRounds === 6 && computerScore > humanScore) {
-      console.log(`You ${humanScore} - ${computerScore} Computer`);
-      console.log('You lose!');
-    } else if (numRounds === 6 && computerScore === humanScore) {
-      console.log(`You ${humanScore} - ${computerScore} Computer`);
-      console.log("It's a draw!");
-    }
-  } while (numRounds < 6);
 }

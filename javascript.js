@@ -84,6 +84,7 @@ restartBtn.addEventListener("click", function () {
   pcScore = 0;
   plrPoints.textContent = "You: 0";
   pcPoints.textContent = "AI: 0";
+  endText.textContent = "";
 });
 
 //Make buttons button

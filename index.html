@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock Paper Scissors</title>
-  <script src="javascript.js"></script>
-  <style>
-    body {
-      background-color: teal;
-    }
-  </style>
-</head>
-<body>
-  <h1>Play a game of rock paper scissors</h1>
-  <button id="rock">Rock</button>
-  <button id="paper">Paper</button>
-  <button id="scissors">Scissors</button>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <script src="javascript.js" defer></script>
+    <style>
+      body {
+        background-color: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Play a game of rock paper scissors</h2>
+      <p>Can you beat our AI overlord? Score 3 points to win!</p>
+    </div>
+    <div id="pickContainer">
+      <button id="rBtn">Rock</button>
+      <button id="pBtn">Paper</button>
+      <button id="sBtn">Scissors</button>
+    </div>
+    <p id="roundText"></p>
+    <div id="scoreContainer">
+      <h3>Score:</h3>
+      <p id="plrPoints">You: 0</p>
+      <p id="pcPoints">AI: 0</p>
+    </div>
+    <br>
+    <div id="resultContainer">
+      <p id="endText"></p>
+      <button id="restart" hidden>Try again</button>
+    </div>
+  </body>
 </html>

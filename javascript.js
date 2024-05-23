@@ -55,14 +55,12 @@ function playGame(pick) {
   pcPoints.textContent = "AI: " + pcScore;
 
   if (plrScore === 3) {
-    roundText.textContent = "";
     endText.textContent = "Winner! Our AI overlord was no match for you!";
     restartBtn.hidden = false;
     rockBtn.disabled = true;
     scissorsBtn.disabled = true;
     paperBtn.disabled = true;
   } else if (pcScore === 3) {
-    roundText.textContent = "";
     endText.textContent = "Defeated! Maybe you need some practice?";
     restartBtn.hidden = false;
     rockBtn.disabled = true;
@@ -74,8 +72,8 @@ function playGame(pick) {
 //Restart game
 const restartBtn = document.querySelector("#restart");
 restartBtn.addEventListener("click", function () {
-  roundText.textcontent = "";
-  endText.textcontent = "";
+  roundText.textContent = "";
+  endText.textContent = "";
   restartBtn.hidden = true;
   rockBtn.disabled = false;
   scissorsBtn.disabled = false;
@@ -84,7 +82,6 @@ restartBtn.addEventListener("click", function () {
   pcScore = 0;
   plrPoints.textContent = "You: 0";
   pcPoints.textContent = "AI: 0";
-  endText.textContent = "";
 });
 
 //Make buttons button

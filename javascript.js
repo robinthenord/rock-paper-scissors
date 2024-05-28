@@ -13,30 +13,30 @@ let pcChoice;
 //Play single round, score increment, return winner
 function playRound(plrChoice, pcChoice) {
   if (plrChoice === pcChoice) {
-    return "Tie! Both players picked " + plrChoice;
+    return "Both players picked " + plrChoice + ". it's a tie!";
   } else if (plrChoice === "rock") {
     if (pcChoice === "scissors") {
       plrScore++;
-      return "Win! Rock beats scissors";
+      return "You played rock, PC played scissors. You win!";
     } else if (pcChoice === "paper") {
       pcScore++;
-      return "Lose! Paper beats rock";
+      return "You played rock, PC played paper. You lose!";
     }
   } else if (plrChoice === "paper") {
     if (pcChoice === "rock") {
       plrScore++;
-      return "Win! Paper beats rock";
+      return "You played paper, PC played rock. You win!";
     } else if (pcChoice === "scissors") {
       pcScore++;
-      return "Lose! Scissors beats paper";
+      return "You played paper, PC played scissors. You lose!";
     }
   } else if (plrChoice === "scissors") {
     if (pcChoice === "paper") {
       plrScore++;
-      return "Win! Scissors beats paper";
+      return "You played scissors, PC played paper. You win!";
     } else if (pcChoice === "rock") {
       pcScore++;
-      return "Lose! Rock beats scissors";
+      return "You played scissors, PC played rock. You lose!";
     }
   }
 }
@@ -52,16 +52,16 @@ function playGame(pick) {
 
   roundText.textContent = playRound(pick, pcChoice);
   plrPoints.textContent = "You: " + plrScore;
-  pcPoints.textContent = "AI: " + pcScore;
+  pcPoints.textContent = "PC: " + pcScore;
 
   if (plrScore === 3) {
-    endText.textContent = "Winner! Our AI overlord was no match for you!";
+    endText.textContent = "You win! Do you want to play again?";
     restartBtn.hidden = false;
     rockBtn.disabled = true;
     scissorsBtn.disabled = true;
     paperBtn.disabled = true;
   } else if (pcScore === 3) {
-    endText.textContent = "Defeated! Maybe you need some practice?";
+    endText.textContent = "You lost! Maybe you need some practice?";
     restartBtn.hidden = false;
     rockBtn.disabled = true;
     scissorsBtn.disabled = true;
@@ -72,7 +72,7 @@ function playGame(pick) {
 //Restart game
 const restartBtn = document.querySelector("#restart");
 restartBtn.addEventListener("click", function () {
-  roundText.textContent = "";
+  roundText.textContent = "Make your choice";
   endText.textContent = "";
   restartBtn.hidden = true;
   rockBtn.disabled = false;
@@ -81,7 +81,7 @@ restartBtn.addEventListener("click", function () {
   plrScore = 0;
   pcScore = 0;
   plrPoints.textContent = "You: 0";
-  pcPoints.textContent = "AI: 0";
+  pcPoints.textContent = "PC: 0";
 });
 
 //Make buttons button

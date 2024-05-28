@@ -1,0 +1,83 @@
+* {
+  font-family: arial, verdana, 'sans-serif';
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  margin: 16px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.header h2 {
+  font-size: 28px;
+}
+
+.header p {
+  margin-top: 24px;
+}
+
+#pickContainer {
+  display: flex;
+  margin: 18px 2px;
+}
+
+body {
+  background-color: #64ad9b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+.pickBtn {
+  background-color: #64ad9b;
+  border: 0;
+  border-radius: 36px;
+  margin: 0 12px;
+}
+
+img {
+  height: fit-content;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 36px;
+  flex-shrink: 1;
+}
+
+#roundText {
+  margin: 8px;
+}
+
+#scoreContainer {
+  text-align: center;
+  margin: 22px;
+}
+
+#scoreContainer p {
+  margin: 8px;
+}
+
+#resultContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
+}
+
+#restart {
+  font-size: 16px;
+  margin: 12px;
+  padding: 6px 18px;
+  border-radius: 8px;
+  background-color: #F2F2F2;
+  border: 0;
+}
+
+#endText {
+  font-size: 18px;
+}

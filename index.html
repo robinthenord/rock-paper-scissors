@@ -5,32 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <script src="javascript.js" defer></script>
-    <style>
-      body {
-        background-color: teal;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
-    <div>
+    <div class="header">
       <h2>Play a game of rock paper scissors</h2>
-      <p>Can you beat our AI overlord? Score 3 points to win!</p>
+      <p>Score 3 points to win!</p>
     </div>
     <div id="pickContainer">
-      <button id="rBtn">Rock</button>
-      <button id="pBtn">Paper</button>
-      <button id="sBtn">Scissors</button>
+      <button class="pickBtn" id="rBtn">
+        <img src="/img/rock.jpg">
+      </button>
+      <button class="pickBtn" id="pBtn">
+        <img src="/img/paper.jpg">
+      </button>
+      <button class="pickBtn" id="sBtn">
+        <img src="/img/scissors.jpg">
+      </button>
     </div>
-    <p id="roundText"></p>
+    <p id="roundText">Make your choice</p>
     <div id="scoreContainer">
       <h3>Score:</h3>
       <p id="plrPoints">You: 0</p>
-      <p id="pcPoints">AI: 0</p>
+      <p id="pcPoints">PC: 0</p>
     </div>
-    <br>
     <div id="resultContainer">
       <p id="endText"></p>
-      <button id="restart" hidden>Try again</button>
+      <button id="restart" hidden>Play again</button>
     </div>
   </body>
 </html>
